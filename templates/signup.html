@@ -1,6 +1,13 @@
 {% extends doc.html %}
 
 {% block content %}
+{% if errormsg %}
+<div id="errormsg">
+    {{ errormsg }}
+</div>
+{% end %}
+
+
 <form method="post" action="">
 <input name="login" value="NAME" onfocus="if(this.value=='NAME')this.value='';" /><br />
 <input name="password" type="password" value="PASSWORD" onfocus="if(this.value=='PASSWORD')this.value='';" /><br />
