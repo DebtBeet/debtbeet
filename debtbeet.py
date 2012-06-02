@@ -41,6 +41,7 @@ class App( tornado.web.Application):
             (r"/", MainHandler),
             (r"/signup", Signup),
             (r"/login", Login),
+            (r"/debt", DebtHandler),
             (r"/styletest", Test),
             (r"(?!\/static.*)(.*)/?", DocHandler),
             #(r"(.*)/?", DocHandler),
@@ -54,9 +55,22 @@ class App( tornado.web.Application):
 
 class MainHandler( AuthHandler):
     def get(self):
-
         if self.user: info(self.user)
         self.render( 'index.html')
+
+
+class AboutHandler( tornado.web.RequestHandler):
+    def get(self):
+        self.render( 'about.html')
+
+class TourHandler( tornado.web.RequestHandler):
+    def get(self):
+        self.render( 'tour.html')
+
+
+class PaymentHandler( tornado.web.RequestHandler):
+    def get(self):
+        self.render( 'payment.html')
 
 class Test( tornado.web.RequestHandler):
     def get(self):
@@ -84,6 +98,7 @@ class DocHandler( tornado.web.RequestHandler):
 class DebtHandler( AuthHandler):
     def get(self):
         #render a pie chart somehow
+        self.render( 'pie.html')
         pass
 
     def post(self):
