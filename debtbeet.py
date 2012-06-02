@@ -56,10 +56,7 @@ class MainHandler( AuthHandler):
     def get(self):
 
         if self.user: info(self.user)
-
-        txt = open( 'docs/hello.txt').read()
-        doc = markdown( txt)
-        self.render( 'doc.html', doc=doc)
+        self.render( 'index.html')
 
 class Test( tornado.web.RequestHandler):
     def get(self):
@@ -83,6 +80,17 @@ class DocHandler( tornado.web.RequestHandler):
 
         doc = markdown( txt)
         self.render( 'doc.html', doc=doc) 
+
+class DebtHandler( AuthHandler):
+    def get(self):
+        #render a pie chart somehow
+        pass
+
+    def post(self):
+        """
+        takes: totalamount, N users, N amounts
+        """
+
 
 
 def main():
