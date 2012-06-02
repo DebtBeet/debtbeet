@@ -1,20 +1,37 @@
 {% extends doc.html %}
 
 {% block content %}
+
+<h1>Sign Up</h1>
+
 {% if errormsg %}
 <div id="errormsg">
     {{ errormsg }}
 </div>
 {% end %}
 
-
 <form method="post" action="">
-<input name="login" value="NAME" onfocus="if(this.value=='NAME')this.value='';" /><br />
-<input name="password" type="password" value="PASSWORD" onfocus="if(this.value=='PASSWORD')this.value='';" /><br />
-<input name="phone" value="PHONE" onfocus="if(this.value=='PHONE')this.value='';" /><br />
-<input name="email" value="EMAIL" onfocus="if(this.value=='EMAIL')this.value='';" /><br />
+	<div>
+		<label for="iName">Full Name</label>
+		<input type="text" name="name" value="" id="iName" />
+	</div>
 
-<input type="submit" value="GO" />
+	<div>
+		<label for="iPassword">Password</label>
+		<input name="password" type="password" value="" id="iPassword" />
+	</div>
+
+	<div>
+		<label for="iPhone">Phone Number</label>
+		<input type="text" name="phone" value="" id="iPhone" />
+	</div>
+
+	<div>
+		<label for="iEmail">Email</label>
+		<input type="email" name="email" value="" id="iEmail" />
+	</div>
+
+	<input type="submit" value="Submit" class="btn btn-primary btn-large" />
 </form>
 {% end %}
 

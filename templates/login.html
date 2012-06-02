@@ -1,10 +1,20 @@
 {% extends doc.html %}
 
 {% block content %}
+<h1>Login</h1>
+
 <form method="post" action="">
-<input name="login" value="NAME" onfocus="if(this.value=='NAME')this.value='';" /><br />
-<input name="password" type="password" value="PASSWORD" onfocus="if(this.value=='PASSWORD')this.value='';" /><br />
-<input type="submit" value="GO" />
+	<div>
+		<label for="iEmail">Email</label>
+		<input type="email" name="email" value="" id="iEmail" />
+	</div>
+	<div>
+		<label for="iPassword">Password</label>
+		<input name="password" type="password" value="" id="iPassword" />
+	</div>
+
+	<input type="submit" value="Submit" class="btn btn-large btn-primary" />
+
 </form>
 {% end %}
 

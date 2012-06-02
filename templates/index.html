@@ -1,51 +1,11 @@
-<!doctype html>
-<html lang="en">
-<head>
-    <title>DebtBeets</title>
+{% extends doc.html %}
 
-    <link rel="stylesheet" href="/static/css/bootstrap.min.css" type="text/css" />
-    <link rel="stylesheet" href="/static/css/bootstrap-responsive.min.css" type="text/css" />
-	<link rel="stylesheet" href="/static/css/style.css" type="text/css" />
-
-    <script src="/static/js/jquery-1.7.2.min.js"></script>
-    <script src="/static/js/html5shiv.js"></script>
-</head>
-<body>
-
-    <div class="container">
-        <header class="row">
-            <div class="span3">
-                <h1 id="logo"><a href="/"><img src="static/logo.png" alt="DebtBeet" />DebtBeet</a></h1>
-            </div>
-
-            <div class="span9">
-                <nav id="main-nav">
-                    <ul>
-                        <li><a href="/signup">Sign Up</a></li>
-                        <li><a href="/tour">Tour</a></li>
-                        <li><a href="/about">About Us</a></li>
-                        <li><a href="/contact">Contact Us</a></li>
-                        <li><a href="/login">Login</a></li>
-                    </ul>
-                </nav>
-            </div>
-        </header>
-
-        <div class="row" id="content">
-            <div class="span12" id="main-content">
-				{% block content %}
-				{% end %}
-            </div>
-        </div>
-
-        <footer>
-            <div class="row">
-                <div class="span12">
-                    <p>Copyright &copy; 2012 DebtBeet</p>
-                </div>
-            </div>
-        </footer>
-    </div>
-
-</body>
-</html>
+{% block content %}
+<div class="hero-unit">
+	<h1>Don't Beet A Debt Horse</h1>
+	<h3>We'll do that for you!</h3>
+	<p class="right">
+		<a href="/signup" class="btn btn-primary btn-large">Sign Up</a>
+	</p>
+</div>
+{% end %}
