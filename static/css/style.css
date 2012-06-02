@@ -1,4 +1,4 @@
-
+@import url(http://fonts.googleapis.com/css?family=Rock+Salt);
 
 
 
@@ -55,4 +55,17 @@ pre {
     border: 1px solid #A7ACD1;
     background: #CBDCF3;
     }
+
+/* header */
+#main-nav li {
+	list-style-type: none;
+	float: left;
+	margin: 0 1em;
+	font-size: .85em;
+}
+
+#logo a {
+	font-family: 'Rock Salt', cursive;
+	color: #000;
+}
 
