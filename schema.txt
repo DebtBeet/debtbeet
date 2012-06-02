@@ -1,0 +1,20 @@
+name
+email
+signup timestamp
+
+group name:  fk to users
+
+bills / ledger
+
+----
+social network tokens
+----
+
+
+
+views:
+signup
+create group
+create bill
+
+

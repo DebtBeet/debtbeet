@@ -1,0 +1,11 @@
+Hey, it's some deadbeets
+
+[login](/login)
+
+[signup](/signup)
+
+[profile & group config](/config)
+
+[make a debt](/debt)
+
+[pay a debt](/pay)
