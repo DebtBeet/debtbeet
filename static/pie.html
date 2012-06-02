@@ -10,13 +10,14 @@
     <script src="/static/js/jquery-1.7.2.min.js"></script>
 	<script src="/static/js/raphael.js"></script>
     <script src="/static/js/html5shiv.js"></script>
+	<script src="/static/js/piechart.js"></script>
 </head>
 <body>
 
     <div class="container">
         <header class="row">
             <div class="span3">
-                <h1 id="logo"><a href="/"><img src="static/logo.png" alt="DebtBeet" />DebtBeet</a></h1>
+                <h1 id="logo"><a href="/"><img src="/static/logo.png" alt="DebtBeet" />DebtBeet</a></h1>
             </div>
 
             <div class="span9">
@@ -32,10 +33,19 @@
             </div>
         </header>
 
-        <div class="row" id="content">
+		<div class="row" id="content">
             <div class="span12" id="main-content">
-				{% block content %}
-				{% end %}
+				<form>
+					<input placeholder="email" type="text" class="email" />
+					<input placeholder="amount" type="text" class="amount" id="input1" />
+					<input placeholder="amount" type="text" class="amount" id="input2" />
+					<input placeholder="amount" type="text" class="amount" id="input3" />
+					<input placeholder="amount" type="text" class="amount" id="input4" />
+					<input placeholder="amount" type="text" class="amount" id="input5" />
+					<p id="button">Go</p>
+				</form>
+				<div id="holder"></div>
+				<p id="copy">Demo of <a href="http://raphaeljs.com/">Raphaël</a>—JavaScript Vector Library</p>
             </div>
         </div>
 
