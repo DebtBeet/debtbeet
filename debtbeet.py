@@ -39,6 +39,7 @@ class App( tornado.web.Application):
         handlers = [
             (r"/", MainHandler),
             (r"/signup", Signup),
+            (r"/login", Login),
             (r"(?!\/static.*)(.*)/?", DocHandler),
             #(r"(.*)/?", DocHandler),
         ]
