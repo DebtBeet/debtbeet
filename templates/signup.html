@@ -1,37 +1,6 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+{% extends doc.html %}
 
-<html xmlns="http://www.w3.org/1999/xhtml">
-
-<head>
-<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
-	<title>Deadbeets</title>
-<style type="text/css">
-body { text-align:center; }
-
-#container { 
-	width:700px; 
-	height:500px; 
-	margin:auto; 
-
-}
-
-img {float:right;}
-form {float:left;margin-top:200px;}
-form.input		{ width:100px; padding:3px;margin:3px;}
-</style>
-
-</head>
-
-<body>
-<div id="container">
-
-{% if errormsg %}
-<div id="errormsg">
-    {{ errormsg }}
-</div>
-{% end %}
-
-
+{% block content %}
 <form method="post" action="">
 <input name="login" value="NAME" onfocus="if(this.value=='NAME')this.value='';" /><br />
 <input name="password" type="password" value="PASSWORD" onfocus="if(this.value=='PASSWORD')this.value='';" /><br />
@@ -40,9 +9,5 @@ form.input		{ width:100px; padding:3px;margin:3px;}
 
 <input type="submit" value="GO" />
 </form>
-
-</div>
-</body>
-
-</html>
+{% end %}
 
