@@ -15,6 +15,7 @@ from markdown import markdown
 import pymongo
 db = 'debtbeet'
 
+from auth import AuthHandler
 
 class App( tornado.web.Application):
     def __init__(self):
@@ -51,8 +52,10 @@ class App( tornado.web.Application):
 
 
 
-class MainHandler( tornado.web.RequestHandler):
+class MainHandler( AuthHandler):
     def get(self):
+
+        if self.user: info(self.user)
 
         txt = open( 'docs/hello.txt').read()
         doc = markdown( txt)
