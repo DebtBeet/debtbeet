@@ -40,6 +40,7 @@ class App( tornado.web.Application):
             (r"/", MainHandler),
             (r"/signup", Signup),
             (r"/login", Login),
+            (r"/styletest", Test),
             (r"(?!\/static.*)(.*)/?", DocHandler),
             #(r"(.*)/?", DocHandler),
         ]
@@ -56,6 +57,10 @@ class MainHandler( tornado.web.RequestHandler):
         txt = open( 'docs/hello.txt').read()
         doc = markdown( txt)
         self.render( 'doc.html', doc=doc)
+
+class Test( tornado.web.RequestHandler):
+    def get(self):
+        self.render( 'test.html')
 
 
 class DocHandler( tornado.web.RequestHandler):
