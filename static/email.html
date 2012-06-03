@@ -3,16 +3,35 @@
 <head>
 	<meta charset="utf-8">
 	<title>We're here to beet some dough from you!</title>
+
+	<link rel="stylesheet" href="http://localhost:8001/static/css/bootstrap.min.css" />
+	<link rel="stylesheet" href="http://localhost:8001/static/css/style.css" />
 </head>
 <body>
-	<h1>Where here to beet some dough from you</h1>
+	<div class="container">
+		<div class="row">
+			<div class="span8">
+				<h1 style="margin-bottom:0.5em;">We're here to beet some dough from you</h1>
 
-	<p>Meet Juicer, he enjoys long walks on the beach, knitting and durian.
-		You probably want to stay on his good side though, he can get a
-		little cranky.</p>
+				<p>Meet Juicer, he enjoys long walks on the beach, knitting and durian.
+					You probably want to stay on his good side though, he can get a
+					little cranky.</p>
 
-	<p>{{name}} wants to remind you that you owe them ${{amount}}.</p>
+				<p>Durian wants to remind you that you owe them $23.99.</p>
 
-	<p>Luckily for you DebtBeet can help you make sure
+				<div class="btn btn-inverse btn-large">
+					<a href="http://localhost:8001/payment" style="color:#FFF;text-decoration:none;">Pay Up!</a>
+				</div>
+
+			</div>
+			<div class="span4">
+				<img src="http://localhost:8001/static/images/juicer.png" alt="juicer" class="right" />
+			</div>
+		</div>
+
+		<hr />
+
+		<p>The <a href="http://localhost:8001/">DebtBeet Team</a> &copy; 2012</p>
+	</div>
 </body>
 </html>
