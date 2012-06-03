@@ -2,7 +2,7 @@ $(document).ready(function() {
 	pieChart();
 	$('#button').click(pieChart);
 	$('#beets').on('change', 'input', pieChart);
-});
+    });
 
 var clr = [];
 var j = 0;
@@ -15,7 +15,9 @@ function pieChart(i) {
 		if (a1 == 0) {
 			j = 0;
 		}
-		var color = $('.amount:nth-child('+(j+1)+')').attr('color');
+
+        var color = $('#input'+(j+1) ).attr('color');
+
         var flag = (a2 - a1) > 180,
         a1 = (a1 % 360) * Math.PI / 180;
         a2 = (a2 % 360) * Math.PI / 180;
@@ -38,8 +40,9 @@ function pieChart(i) {
     var data = [];
 		var inputs = $('#beets').children('.amount').length;
 			for (var i = 0; i < inputs; i++) {
-				data.push(parseInt($('.amount:nth-child(' + (i+1) + ')').val()));
-				$('.amount:nth-child('+(i+1)+')').attr('color', 1 - ((i+1)/10));
+                data.push( parseFloat( $('#input'+(i+1) ).val() ))
+                $('#input'+(i+1) ).attr('color', 1-((i+1)/10)) ;
+
 			}
     var paths = r.set(),
         total,
