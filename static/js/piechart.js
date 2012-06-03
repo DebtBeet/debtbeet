@@ -1,12 +1,14 @@
 $(document).ready(function() {
 	pieChart();
 	$('#button').click(pieChart);
+	$('#beets').on('change', 'input', pieChart);
 });
 
 var clr = [];
 var j = 0;
 
 function pieChart(i) {
+	$("#holder").empty();
 	var r = Raphael("holder");
     r.customAttributes.segment = function (x, y, r, a1, a2) {
 		j += 1
