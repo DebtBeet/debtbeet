@@ -64,7 +64,7 @@ class Signup( AuthHandler):
 
         else:
             info( 'User exists, redirect to login')
-            self.redirect( '/login') #user already exists
+            self.redirect( '/debt') #user already exists
            
  
     def mkuser(self, **kwarg):
