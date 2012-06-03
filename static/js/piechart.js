@@ -21,6 +21,7 @@ function pieChart(i) {
         var flag = (a2 - a1) > 180,
         a1 = (a1 % 360) * Math.PI / 180;
         a2 = (a2 % 360) * Math.PI / 180;
+
         return {
             path: [["M", x, y], ["l", r * Math.cos(a1), r * Math.sin(a1)], ["A", r, r, 0, + flag, 1, x + r * Math.cos(a2), y + r * Math.sin(a2)], ["z"]],
             fill: "hsb(" + color + ", .75, .8)"
@@ -79,9 +80,8 @@ function updateColors(){
 	inputs.each(function(i, ele){
 		var hue = 360 * $(ele).attr("color"),
 			box = $(c.get(i));
-
 		console.log(hue);
+
 		box.css("background-color", "hsl("+hue+", 75%, 80%)");
-		console.log(box.css("background-color"));
 	});
 }
