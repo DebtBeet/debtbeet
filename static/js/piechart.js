@@ -1,5 +1,6 @@
 $(document).ready(function() {
 	pieChart();
+	$('#button').click(pieChart);
 });
 
 function pieChart() {
@@ -11,7 +12,7 @@ function pieChart() {
         a1 = (a1 % 360) * Math.PI / 180;
         a2 = (a2 % 360) * Math.PI / 180;
         return {
-            path: [["M", x, y], ["l", r * Math.cos(a1), r * Math.sin(a1)], ["A", r, r, 0, +flag, 1, x + r * Math.cos(a2), y + r * Math.sin(a2)], ["z"]],
+            path: [["M", x, y], ["l", r * Math.cos(a1), r * Math.sin(a1)], ["A", r, r, 0, + flag, 1, x + r * Math.cos(a2), y + r * Math.sin(a2)], ["z"]],
             fill: "hsb(" + clr + ", .75, .8)"
         };
     };
@@ -21,16 +22,16 @@ function pieChart() {
             val;
         for (i = 0; i < ii; i++) {
             val = 360 / total * data[i];
-            paths[i].animate({segment: [200, 200, 150, start, start += val]}, ms || 1500, "bounce");
+            paths[i].animate({segment: [200, 200, 150, start, start += val]}, 200);
             paths[i].angle = start - val / 2;
         }
     }
 	
-	input1 = 120;
-	input2 = 120;
-	input3 = 120;
-	input4 = 120;
-	input5 = 120;
+	var input1 = parseInt($('#input1').val());
+	var input2 = parseInt($('#input2').val());
+	var input3 = parseInt($('#input3').val());
+	var input4 = parseInt($('#input4').val());
+	var input5 = parseInt($('#input5').val());
 
     var data = [input1, input2, input3, input4, input5],
         paths = r.set(),
@@ -48,17 +49,11 @@ function pieChart() {
         var val = 360 / total * data[i];
         (function (i, val) {
             paths.push(r.path().attr({segment: [200, 200, 1, start, start + val], stroke: "#fff"}).click(function () {
-                total += data[i];
-				var myString = $('.amount').val();
-				var myInteger = parseInt(myString);
-                data[i] = myInteger;
-                animate();
+                pieChart();
             }));
         })(i, val);
         start += val;
     }
     bg.animate({r: 151}, 1000, "bounce");
     animate(1000);
-    var t = r.text(200, 20, "Click on segments to make them bigger.").attr({font: '100 20px "Helvetica Neue", Helvetica, "Arial Unicode MS", Arial, sans-serif', fill: "#fff"});
-	
 };
