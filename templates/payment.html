@@ -1,35 +1,45 @@
 {% extends doc.html %}
 
 {% block content %}
-<h1>Hi <span class="">{Person 1}</span> You Owe <span class="">{Person 2}</span>
-	<span class="green">$1 Million Dollars</span></h1>
+<div class="row">
+	<div class="span8">
+		<h1>Hi <span class="">Durian</span> You Owe <span class="">Warren Beety</span>
+			<br /><span class="green">$23.99</span></h1>
 
-<h3>Don't feel de-beet-eated, you can square up your debt with the form below</h3>
+		<h3>Don't feel de-beet-eated, you can square up your debt below</h3>
 
-<div class="alert alert-error hide" id="payment-errors"></div>
+		<div class="alert alert-error hide" id="payment-errors"></div>
 
-<form action="" method="post" id="payment-form">
-	<div>
-        <label for="payment-amount">Payment Amount</label>
-        $ <input type="text" name="amount" autocomplete="off" id="payment-amount" value="23.99" /> (usd)
-    </div>
-    <div>
-        <label for="card-number">Card Number</label>
-        <input type="text" autocomplete="off" id="card-number" value="4111111111111111"  />
-    </div>
-    <div>
-        <label for="card-cvc">CVC</label>
-        <input type="text" size="4" autocomplete="off" id="card-cvc" value="911" />
-    </div>
-    <div>
-        <label for="card-expiry-month">Expiration (MM/YYYY)</label>
-        <input type="text" size="2" id="card-expiry-month" value="12" />
-        <span> / </span>
-        <input type="text" size="4" id="card-expiry-year" value="2013" />
-    </div>
+		<form action="" method="post" id="payment-form">
+			<div>
+				<label for="payment-amount">Payment Amount</label>
+				$ <input type="text" name="amount" autocomplete="off" id="payment-amount" value="23.99" /> (usd)
+			</div>
+			<div>
+				<label for="card-number">Card Number</label>
+				<input type="text" autocomplete="off" id="card-number" value="4111111111111111"  />
+			</div>
+			<div>
+				<label for="card-cvc">CVC</label>
+				<input type="text" size="4" autocomplete="off" id="card-cvc" value="911" />
+			</div>
+			<div>
+				<label for="card-expiry-month">Expiration (MM/YYYY)</label>
+				<input type="text" size="2" id="card-expiry-month" value="12" />
+				<span> / </span>
+				<input type="text" size="4" id="card-expiry-year" value="2013" />
+			</div>
 
-    <input type="submit" value="Submit Payment" class="btn btn-large btn-inverse">
-</form>
+			<input type="submit" value="Submit Payment" class="btn btn-large btn-inverse">
+		</form>
+	</div>
+	<div class="span4">
+		<img src="/static/images/juicer.png" alt="Juicer" style="margin-bottom:1em;" />
+		<p>
+			<em>Juicer makes sure you payments don't stray off the beeten path</em>
+		</p>
+	</div>
+</div>
 
 <script type="text/javascript" src="https://js.stripe.com/v1/"></script>
 <script type="text/javascript" src="/static/js/stripe.js"></script>
