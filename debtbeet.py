@@ -45,6 +45,7 @@ class App( tornado.web.Application):
             (r"/tour", TourHandler),
             (r"/about", AboutHandler),
             (r"/payment", PaymentHandler),
+            (r"/dashboard", DashboardHandler),
             (r"/styletest", Test),
             (r"(?!\/static.*)(.*)/?", DocHandler),
             #(r"(.*)/?", DocHandler),
@@ -74,6 +75,10 @@ class TourHandler( tornado.web.RequestHandler):
 class PaymentHandler( tornado.web.RequestHandler):
     def get(self):
         self.render( 'payment.html')
+
+class DashboardHandler( tornado.web.RequestHandler):
+    def get(self):
+        self.render( 'dashboard.html')
 
 class Test( tornado.web.RequestHandler):
     def get(self):
