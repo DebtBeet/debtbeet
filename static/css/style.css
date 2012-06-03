@@ -131,3 +131,12 @@ footer > div > div {
 #pricing > div:last-child{
 	background-color:#EFCDA9;
 }
+
+.colorbox {
+	background-color:#EEE;
+	padding:0.5em;
+}
+
+.colorbox input {
+	margin-bottom:0;
+}

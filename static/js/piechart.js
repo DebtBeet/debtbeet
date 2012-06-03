@@ -38,7 +38,7 @@ function pieChart(i) {
     }
 
     var data = [];
-		var inputs = $('#beets').children('.amount').length;
+		var inputs = $('#beets').find('.amount').length;
 			for (var i = 0; i < inputs; i++) {
                 data.push( parseFloat( $('#input'+(i+1) ).val() ))
                 $('#input'+(i+1) ).attr('color', 1-((i+1)/10)) ;
@@ -66,4 +66,22 @@ function pieChart(i) {
     }
     bg.animate({r: 151}, 1000, "bounce");
     animate(1000);
+	updateColors();
 };
+
+/**
+ * Find the color blocks and update the colors
+ */
+function updateColors(){
+	var c = $("#beets .colorbox"),
+		inputs = $("#beets .amount");
+
+	inputs.each(function(i, ele){
+		var hue = 360 * $(ele).attr("color"),
+			box = $(c.get(i));
+
+		console.log(hue);
+		box.css("background-color", "hsl("+hue+", 75%, 80%)");
+		console.log(box.css("background-color"));
+	});
+}
