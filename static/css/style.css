@@ -102,3 +102,32 @@ footer > div > div {
 	background-repeat: no-repeat;
 	background-position: right;
 }
+
+.price {
+	font-size:2em;
+	font-weight: bold;
+	color: #35A844;
+	margin-bottom:1em;
+}
+
+
+#pricing {
+	margin-bottom:1em;
+}
+
+#pricing > div {
+	text-align:center;
+	padding: 1em 0;
+}
+
+#pricing > div:first-child{
+	background-color:#DBD2C2;
+}
+
+#pricing > div:nth-child(2){
+	background-color:#DBDBDB;
+}
+
+#pricing > div:last-child{
+	background-color:#EFCDA9;
+}
