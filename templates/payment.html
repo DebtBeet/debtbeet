@@ -1,6 +1,38 @@
 {% extends doc.html %}
 
 {% block content %}
+<h1>Hi <span class="">{Person 1}</span> You Owe <span class="">{Person 2}</span>
+	<span class="green">$1 Million Dollars</span></h1>
+
+<h3>Don't feel de-beet-eated, you can square up your debt with the form below</h3>
+
+<div class="alert alert-error hide" id="payment-errors"></div>
+
+<form action="" method="post" id="payment-form">
+	<div>
+        <label for="payment-amount">Payment Amount</label>
+        $ <input type="text" name="amount" autocomplete="off" id="payment-amount" /> (usd)
+    </div>
+    <div>
+        <label for="card-number">Card Number</label>
+        <input type="text" autocomplete="off" id="card-number" />
+    </div>
+    <div>
+        <label for="card-cvc">CVC</label>
+        <input type="text" size="4" autocomplete="off" id="card-cvc" />
+    </div>
+    <div>
+        <label for="card-expiry-month">Expiration (MM/YYYY)</label>
+        <input type="text" size="2" id="card-expiry-month" />
+        <span> / </span>
+        <input type="text" size="4" id="card-expiry-year" />
+    </div>
+
+    <input type="submit" value="Submit Payment" class="btn btn-large btn-inverse">
+</form>
+
+<script type="text/javascript" src="https://js.stripe.com/v1/"></script>
+<script type="text/javascript" src="/static/js/stripe.js"></script>
 {% end %}
 
 
