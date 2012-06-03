@@ -48,6 +48,7 @@ class App( tornado.web.Application):
             (r"/payment", PaymentHandler),
             (r"/dashboard", DashboardHandler),
             (r"/thankyou", ThanksHandler),
+            (r"/postspam", Postspam),
             (r"/styletest", Test),
             (r"(?!\/static.*)(.*)/?", DocHandler),
             #(r"(.*)/?", DocHandler),
@@ -63,6 +64,11 @@ class MainHandler( AuthHandler):
     def get(self):
         if self.user: info(self.user)
         self.render( 'index.html')
+
+class Postspam( tornado.web.RequestHandler):
+    def get(self):
+        self.render( 'postspam.html')
+
 
 class ThanksHandler( tornado.web.RequestHandler):
     def get(self):
@@ -82,6 +88,12 @@ class PaymentHandler( tornado.web.RequestHandler):
         self.render( 'payment.html')
 
     def post(self):
+
+        from time import sleep
+        sleep( .5)
+
+        return self.redirect('/thankyou')
+
         # set your secret key: remember to change this to your live secret key in production
         # see your keys here https://manage.stripe.com/account
         stripe.api_key = "JRRtYhu65g1qmK6CnJSGnrGURYfgXktv"
@@ -157,6 +169,9 @@ class DebtHandler( AuthHandler):
         """
         takes: totalamount, N users, N amounts
         """
+
+        return self.redirect('/postspam')
+
         debtbeets = {}
 
         for i in range( int( self.get_argument('beetcounter'))+1  ):
