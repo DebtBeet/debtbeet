@@ -90,3 +90,15 @@ footer > div > div {
 #copy a {
     color: #fff;
 }
+
+#in-beeta {
+	position:fixed;
+	top:0;
+	right:0;
+}
+
+#juicer {
+	background-image: url("../images/juicer.png");
+	background-repeat: no-repeat;
+	background-position: right;
+}
