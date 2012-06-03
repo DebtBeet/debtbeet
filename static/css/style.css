@@ -70,6 +70,24 @@ footer > div > div {
 	float:right;
 }
 
+<<<<<<< HEAD
 .green {
 	color: #35A844;
+}
+
+#holder {
+    height: 400px;
+    margin: 0;
+    width: 400px;
+}
+
+#copy {
+    bottom: 0;
+    font: 300 .7em "Helvetica Neue", Helvetica, "Arial Unicode MS", Arial, sans-serif;
+    position: absolute;
+    right: 1em;
+    text-align: right;
+}
+#copy a {
+    color: #fff;
 }
