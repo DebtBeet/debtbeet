@@ -16,7 +16,7 @@
     <div class="container">
         <header class="row">
             <div class="span3">
-                <h1 id="logo"><a href="/"><img src="static/logo.png" alt="DebtBeet" />DebtBeet</a></h1>
+                <h1 id="logo"><a href="/"><img src="/static/logo.png" alt="DebtBeet" />DebtBeet</a></h1>
             </div>
 
             <div class="span9">
@@ -34,15 +34,17 @@
 
         <div class="row" id="content">
             <div class="span12" id="main-content">
-				{% block content %}
-				{% end %}
+				<div id="holder"></div>
+				<p id="copy">Demo of <a href="http://raphaeljs.com/">Raphaël</a>—JavaScript Vector Library</p>
             </div>
         </div>
 
-        <footer class="row">
-			<div class="span12">
-				<div>Copyright &copy; 2012 DebtBeet</div>
-			</div>
+        <footer>
+            <div class="row">
+                <div class="span12">
+                    <p>Copyright &copy; 2012 DebtBeet</p>
+                </div>
+            </div>
         </footer>
     </div>
 
