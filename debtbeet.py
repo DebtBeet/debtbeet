@@ -98,6 +98,7 @@ class DocHandler( tornado.web.RequestHandler):
         doc = markdown( txt)
         self.render( 'doc.html', doc=doc) 
 
+
 class DebtHandler( AuthHandler):
     def get(self):
         #render a pie chart somehow
@@ -108,6 +109,15 @@ class DebtHandler( AuthHandler):
         """
         takes: totalamount, N users, N amounts
         """
+        debtbeets = {}
+
+        for i in range( int( self.get_argument('beetcounter'))+1  ):
+            user = self.get_argument( 'debtbeet%d'%i)
+            owes = float( self.get_argument( 'owes%d'%i))
+            debtbeets[user] = owes
+
+        self.get()
+
 
 
 
