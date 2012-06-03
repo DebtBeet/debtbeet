@@ -11,21 +11,21 @@
 <form action="" method="post" id="payment-form">
 	<div>
         <label for="payment-amount">Payment Amount</label>
-        $ <input type="text" name="amount" autocomplete="off" id="payment-amount" /> (usd)
+        $ <input type="text" name="amount" autocomplete="off" id="payment-amount" value="23.99" /> (usd)
     </div>
     <div>
         <label for="card-number">Card Number</label>
-        <input type="text" autocomplete="off" id="card-number" />
+        <input type="text" autocomplete="off" id="card-number" value="4111111111111111"  />
     </div>
     <div>
         <label for="card-cvc">CVC</label>
-        <input type="text" size="4" autocomplete="off" id="card-cvc" />
+        <input type="text" size="4" autocomplete="off" id="card-cvc" value="911" />
     </div>
     <div>
         <label for="card-expiry-month">Expiration (MM/YYYY)</label>
-        <input type="text" size="2" id="card-expiry-month" />
+        <input type="text" size="2" id="card-expiry-month" value="12" />
         <span> / </span>
-        <input type="text" size="4" id="card-expiry-year" />
+        <input type="text" size="4" id="card-expiry-year" value="2013" />
     </div>
 
     <input type="submit" value="Submit Payment" class="btn btn-large btn-inverse">
