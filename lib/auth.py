@@ -22,14 +22,14 @@ class Login( AuthHandler):
         self.render( 'login.html', next=next, errormsg=errormsg)
 
     def post( self):
-        login = self.get_argument( 'login', None)
+        login = self.get_argument( 'email', None)
         password = self.get_argument( 'password', None)
 
         if not password or not login:
             warning('didnt fill required fields')
-            return self.get( "please enter both a name and a password")
+            return self.get( "please enter both an email and a password")
 
-        userobj = self.application.M.auth.find_one( {'login':login.lower()})
+        userobj = self.application.M.auth.find_one( {'email':login.lower()})
         if not userobj: 
             warning('user doesnt exist')
             return self.get( "Invalid login or password!")
@@ -40,8 +40,8 @@ class Login( AuthHandler):
 
         self.set_secure_cookie("deadbeetuser", login)
 
-        nexturl = self.get_argument('next', None)
-        self.redirect( nexturl or '/')
+        nexturl = self.get_argument('next', "/dashboard")
+        self.redirect(nexturl)
 
 
 class Signup( AuthHandler):
@@ -50,17 +50,16 @@ class Signup( AuthHandler):
 
     def post(self):
 
-        login = self.get_argument('login')
+        login = self.get_argument('name')
         password = self.get_argument('password')
         password = hashlib.sha256(password).hexdigest() 
-        phone = self.get_argument('phone')
         email = self.get_argument('email')
 
         #validation?!  hahaha, nope
 
         user = self.application.M.auth.find_one( {'login':login})
         if not user:
-            return self.mkuser( login=login,password=password,phone=phone,email=email)
+            return self.mkuser( login=login,password=password,email=email)
 
 
         else:
@@ -71,6 +70,6 @@ class Signup( AuthHandler):
     def mkuser(self, **kwarg):
         self.application.M.auth.insert( dict(**kwarg))
         info( 'User created')
-        return self.redirect('/')
+        return self.redirect('/login')
 
 
