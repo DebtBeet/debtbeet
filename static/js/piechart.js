@@ -38,7 +38,7 @@ function pieChart(i) {
     }
 
     var data = [];
-		var inputs = $('#beets').children('.amount').length;
+		var inputs = $('#beets').find('.amount').length;
 			for (var i = 0; i < inputs; i++) {
                 data.push( parseFloat( $('#input'+(i+1) ).val() ))
                 $('#input'+(i+1) ).attr('color', 1-((i+1)/10)) ;
