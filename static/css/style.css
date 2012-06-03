@@ -3,6 +3,12 @@
 body {
 	border-top: 0.25em solid #7A1624;
 	padding: 1em 0;
+	color: #333;
+}
+
+#logo img {
+	width:50%;
+	height:auto;
 }
 
 /* header */
@@ -42,13 +48,13 @@ header {
 }
 
 footer > div {
-	background-color: #35A844;
-	color: #FFF;
+	background-color: #D7D7D7;
 	border-radius: 0.5em;
 }
 
 footer > div > div {
 	padding: 1em;
+	text-align:right;
 }
 
 .hero-unit h1 {
