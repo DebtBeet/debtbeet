@@ -87,14 +87,33 @@ class PaymentHandler( tornado.web.RequestHandler):
 
         # Explode the price
         price = self.get_argument('amount')
+        price = price.strip(',')
+        float( price)
+        if '.' in price:
+            dollars, cents = price.split('.')
+            dollars = int(dollars)*100
+            dollars += int(cents)
+
+            cents = dollars
+
+        else:
+            cents = int(price) *100
+
+
+
 
         # create the charge on Stripe's servers - this will charge the user's card
         charge = stripe.Charge.create(
-            amount=1000, # amount in cents, again
+            amount=cents, # amount in cents, again
             currency="usd",
             card=token,
             description="payinguser@example.com"
-)
+            )
+
+        self.application.M.payments.insert( charge)
+
+        self.redirect( '/payment')
+
 
 class DashboardHandler( tornado.web.RequestHandler):
     def get(self):
