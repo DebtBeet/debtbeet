@@ -86,7 +86,7 @@ class PaymentHandler( tornado.web.RequestHandler):
         token = self.get_argument('stripeToken')
 
         # Explode the price
-		price = self.get_argument('amount')
+        price = self.get_argument('amount')
 
         # create the charge on Stripe's servers - this will charge the user's card
         charge = stripe.Charge.create(
