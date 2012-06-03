@@ -70,6 +70,6 @@ class Signup( AuthHandler):
     def mkuser(self, **kwarg):
         self.application.M.auth.insert( dict(**kwarg))
         info( 'User created')
-        return self.redirect('/login')
+        return self.redirect('/debt')
 
 
