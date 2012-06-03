@@ -13,6 +13,7 @@ from tornado.web import HTTPError
 from markdown import markdown
 
 import pymongo
+import stripe
 db = 'debtbeet'
 
 from auth import AuthHandler
@@ -75,6 +76,25 @@ class TourHandler( tornado.web.RequestHandler):
 class PaymentHandler( tornado.web.RequestHandler):
     def get(self):
         self.render( 'payment.html')
+
+    def post(self):
+        # set your secret key: remember to change this to your live secret key in production
+        # see your keys here https://manage.stripe.com/account
+        stripe.api_key = "JRRtYhu65g1qmK6CnJSGnrGURYfgXktv"
+
+        # get the credit card details submitted by the form
+        token = self.get_argument('stripeToken')
+
+        # Explode the price
+		price = self.get_argument('amount')
+
+        # create the charge on Stripe's servers - this will charge the user's card
+        charge = stripe.Charge.create(
+            amount=1000, # amount in cents, again
+            currency="usd",
+            card=token,
+            description="payinguser@example.com"
+)
 
 class DashboardHandler( tornado.web.RequestHandler):
     def get(self):
